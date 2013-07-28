@@ -1,0 +1,84 @@
+html, body, table
+{
+  font-family: Verdana, Arial, Helvetica;
+  font-size:   10pt;
+  font-style:  normal;
+  font-weight: normal;
+  background:  #999999;
+  color:       #000000;
+}
+
+pre
+{
+  font-family: "courier new";
+  font-style:  normal;
+  font-size:   10pt;
+}
+
+.cite 
+{
+  color:       #cccccc;
+  font-size:   8pt;
+}
+
+a:link
+{
+  color: #cccccc;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:visited
+{
+  color: #666666;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:active
+{
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color: #ffffff;
+  background: #666666;
+  text-decoration: none;
+}
+
+@media print
+{
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; page-break-inside: avoid }
+  blockquote, pre        { page-break-inside: avoid }
+  ul, ol, dl             { page-break-before: avoid }
+}
+
+/* ******************  speech  ************** */
+
+@media aural
+{
+  h1, h2, h3,
+  h4, h5, h6    { voice-family: paul, male; stress: 20; richness: 90 }
+  h1            { pitch: x-low; pitch-range: 90 }
+  h2            { pitch: x-low; pitch-range: 80 }
+  h3            { pitch: low; pitch-range: 70 }
+  h4            { pitch: medium; pitch-range: 60 }
+  h5            { pitch: medium; pitch-range: 50 }
+  h6            { pitch: medium; pitch-range: 40 }
+  li, dt, dd    { pitch: medium; richness: 60 }
+  dt            { stress: 80 }
+  pre, code, tt { pitch: medium; pitch-range: 0; stress: 0; richness: 80 }
+  em            { pitch: medium; pitch-range: 60; stress: 60; richness: 50 }
+  strong        { pitch: medium; pitch-range: 60; stress: 90; richness: 90 }
+  dfn           { pitch: high; pitch-range: 60; stress: 60 }
+  s, strike     { richness: 0 }
+  i             { pitch: medium; pitch-range: 60; stress: 60; richness: 50 }
+  b             { pitch: medium; pitch-range: 60; stress: 90; richness: 90 }
+  u             { richness: 0 }
+  a:link        { voice-family: harry, male }
+  a:visited     { voice-family: betty, female }
+  a:active      { voice-family: betty, female; pitch-range: 80; pitch: x-high }
+}
