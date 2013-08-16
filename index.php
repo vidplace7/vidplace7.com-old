@@ -144,7 +144,7 @@
 					</ul>
 				</div>
 				<!-- Services -->
-				<div class="span3">
+				<div class="span4">
 					<? if (isset($msg)) echo $msg;?>
 					<table class="table table-hover table-condensed">
 						<thead>
