@@ -9,7 +9,7 @@
 	include("assets/php/serverstats.php");
 	
 	$services = array(
-		new service("Website Http", 80, "http://www.dries007.net"),
+		new service("Website Http", 80, "http://www.dries007.net", "direct.dries007.net"),
 		new service("MySQL", 3306),
 		new service("SSH", 22),
 		new service("Webmin", 81, "http://webmin.dries007.net"),
