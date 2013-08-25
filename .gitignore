@@ -9,6 +9,7 @@ graph/
 phpmyadmin/
 phpsysinfo/
 capes/
+unite/
 
 # Files
 *.zip
