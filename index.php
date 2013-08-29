@@ -4,6 +4,8 @@
 	Ini_Set( 'display_errors', true );
 	$start = microtime(true);
 	
+	date_default_timezone_set("Europe/Brussels");
+	
 	include("assets/php/service.class.php");
 	include("assets/php/link.class.php");
 	include("assets/php/serverstats.php");
