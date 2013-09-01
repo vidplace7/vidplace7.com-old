@@ -11,25 +11,26 @@
 	include("assets/php/serverstats.php");
 	
 	$services = array(
-		new service("Website Http", 80, "http://www.dries007.net", "direct.dries007.net"),
+		//new service("Website Http", 80, "http://dries007.net", "dries007.net"),
+		new service("Website Https", 443, "https://dries007.net", "dries007.net"),
 		new service("MySQL", 3306),
 		new service("SSH", 22),
-		new service("Webmin", 81, "http://webmin.dries007.net"),
+		new service("Webmin", 81, "https://webmin.dries007.net"),
 		new service("Jenkins", 8080, "http://jenkins.dries007.net"),
-		new service("Transmission", 9091, "http://transmission.dries007.net")
+		new service("Transmission", 9091, "https://transmission.dries007.net")
 	);
 	
 	$links = array(
 		"Online profiles" => array(
-			new link("Home", "http://www.dries007.net", "globe"),
-			new link("Github", "http://github.com/dries007", "github"),
-			new link("Bitbucket", "http://bitbucket.com/dries007", "bitbucket"),
-			new link("Youtube", "http://www.youtube.com/user/driesk007", "youtube-play"),
-			new link("Twitter", "http://twitter.com/driesk007", "twitter"),
+			new link("Home", "https://dries007.net", "globe"),
+			new link("Github", "https://github.com/dries007", "github"),
+			new link("Bitbucket", "https://bitbucket.com/dries007", "bitbucket"),
+			new link("Youtube", "https://www.youtube.com/user/driesk007", "youtube-play"),
+			new link("Twitter", "https://twitter.com/driesk007", "twitter"),
 			new link("Email", "#contactModal", "envelope", "data-toggle=\"modal\"")
 		),
 		"Links" => array(
-			new link("dtools.net", "http://dtools.net", "wrench"),
+			new link("dtools.net", "https://dtools.net", "wrench"),
 			new link("Downloads", "/downloads", "download-alt", ""),
 			new link("Minecraft Capes", "/capes", "bookmark", ""),
 			new link("The Hacker Manifesto", "/manifesto", "quote-left", ""),
@@ -39,7 +40,7 @@
 	
 	if (strstr($_SERVER["HTTP_HOST"], "driesgames.game-server.cc"))
 	{
-		$rem = strtotime("August 24, 2013 00:00") - time();
+		$rem = strtotime("August 31, 2013 00:00") - time();
 		$days = floor($rem / 86400);
 		$msg =
 		"<div class=\"alert alert-block\">
@@ -47,14 +48,6 @@
 			<h4>Warning!</h4>
 				You are using my old domain.<br>
 				This domain will expire in ~$days days.
-		</div>";
-	}
-	else
-	{
-		$msg =
-		"<div class=\"alert alert-info\">
-			<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-			You can now use the root domain, thanks to CloudFlare.<br>
 		</div>";
 	}
 ?>
@@ -65,8 +58,8 @@
 		<meta name="author" content="Dries007">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Le styles -->
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+		<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
 		<style type="text/css">
 			/* Custom container */
 			.container-narrow {
@@ -131,7 +124,7 @@
 			<div class="row-fluid" style="padding-top: 30px;">
 				<!-- Nav sidebar -->
 				<div class="span3 offset1 well sidebar-nav">
-					<img src="http://www.gravatar.com/avatar/0777ff2884805dd73363621faf56d1b9" class="img-rounded" />
+					<img src="https://www.gravatar.com/avatar/0777ff2884805dd73363621faf56d1b9" class="img-rounded" />
 					<hr>
 					<ul class="nav nav-list">
 					  <? foreach ($links as $catName => $cat)
@@ -181,8 +174,8 @@
 		<div id="footer">
 			<div class="container">
 				<p class="muted credit">
-					<a href="http://www.dries007.net">&copy; Dries007</a> <? echo date("Y")?>. Website source available <a href="http://github.com/dries007/">here.</a><br>
-					Build with <a href="http://twitter.github.io/bootstrap/"><i class="icon-github"></i> Bootstrap</a> & <a href="http://fortawesome.github.io/Font-Awesome/"><i class="icon-flag"></i> Font Awesome</a> in <? $end = microtime(true); echo round(($end - $start), 4);?> sec.
+					<a href="https://dries007.net">&copy; Dries007</a> <? echo date("Y")?>. Website source available <a href="https://github.com/dries007/Dries007.net">here.</a><br>
+					Build with <a href="https://twitter.github.io/bootstrap/"><i class="icon-github"></i> Bootstrap</a> & <a href="https://fortawesome.github.io/Font-Awesome/"><i class="icon-flag"></i> Font Awesome</a> in <? $end = microtime(true); echo round(($end - $start), 4);?> sec.
 				</p>
 			  </div>
 		</div>
@@ -201,7 +194,7 @@
 			</div>
 		</div>
 		<!-- End Contact modal -->
-		<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</body>
 </html>
