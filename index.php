@@ -32,9 +32,11 @@
 		"Links" => array(
 			new link("dtools.net", "https://dtools.net", "wrench"),
 			new link("Downloads", "/downloads", "download-alt", ""),
+            new link("Screenshots", "/screenshots", "screenshot", ""),
+            new link("Geogebra", "/geogebra", "superscript", ""),
 			new link("Minecraft Capes", "/capes", "bookmark", ""),
 			new link("The Hacker Manifesto", "/manifesto", "quote-left", ""),
-			new link("Function plotter", "/graph", "bar-chart", "")
+			new link("Graph", "/graph", "pencil", "")
 		)
 	);
 	
@@ -58,8 +60,8 @@
 		<meta name="author" content="Dries007">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Le styles -->
-		<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-		<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+		<link href="assets/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+		<link href="assets/css/font-awesome.css" rel="stylesheet">
 		<style type="text/css">
 			/* Custom container */
 			.container-narrow {
@@ -124,7 +126,7 @@
 			<div class="row-fluid" style="padding-top: 30px;">
 				<!-- Nav sidebar -->
 				<div class="span3 offset1 well sidebar-nav">
-					<img src="https://www.gravatar.com/avatar/0777ff2884805dd73363621faf56d1b9" class="img-rounded" />
+					<img src="https://secure.gravatar.com/avatar/0777ff2884805dd73363621faf56d1b9" class="img-rounded" />
 					<hr>
 					<ul class="nav nav-list">
 					  <? foreach ($links as $catName => $cat)
@@ -153,6 +155,19 @@
 						</tr>
 						<?}?>
 					</table>
+                    <hr>
+                    <!-- Pr0xy -->
+                    <div>
+                        <span>I &lt;/3 censorship.</span>
+                        <div class="form-inline">
+                            <fieldset class="input-append">
+                                <input type="text" id="url" placeholder="URL here please..." onkeydown="if (event.keyCode == 13) document.getElementById('goBtn').click();">
+                                <a class="btn btn-success" id="sslBtn" onClick="toggleSSL();"><i class="icon-lock" id="sslIco"></i> SSL</a>
+                                <a class="btn" id="goBtn" onClick="goPr0xy();">Go!</a>
+                            </fieldset>
+                        </div>
+                        <span class="muted">Currently not usable with login systems, sorry.</span>
+                    </div>
 				</div>
 				<!-- Server stats -->
 				<div class="span3 well">
@@ -194,7 +209,29 @@
 			</div>
 		</div>
 		<!-- End Contact modal -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        var ssl = true;
+        function toggleSSL()
+        {
+            ssl = !ssl;
+            if (!ssl)
+            {
+                document.getElementById('sslBtn').className = "btn btn-warning";
+                document.getElementById('sslIco').className = "icon-unlock-alt";
+            }
+            else
+            {
+                document.getElementById('sslBtn').className = "btn btn-success";
+                document.getElementById('sslIco').className = "icon-lock";
+            }
+            
+        }
+        function goPr0xy()
+        {
+            location.href = 'http' + (ssl ? 's' : '') + '://pr0xy.dries007.net/' + document.getElementById('url').value;
+        }
+        </script>
 	</body>
 </html>
