@@ -11,18 +11,18 @@
 	include("assets/php/serverstats.php");
 	
 	$services = array(
-		//new service("Website Http", 80, "http://dries007.net", "dries007.net"),
+		new service("Website Http", 80, "http://dries007.net", "dries007.net"),
 		new service("Website Https", 443, "https://dries007.net", "dries007.net"),
 		new service("MySQL", 3306),
 		new service("SSH", 22),
-		new service("Webmin", 81, "https://webmin.dries007.net"),
+		new service("Webmin", 81, "http://webmin.dries007.net"),
 		new service("Jenkins", 8080, "http://jenkins.dries007.net"),
-		new service("Transmission", 9091, "https://transmission.dries007.net")
+		new service("Transmission", 9091, "http://transmission.dries007.net")
 	);
 	
 	$links = array(
 		"Online profiles" => array(
-			new link("Home", "https://dries007.net", "globe"),
+			new link("Home", "http://dries007.net", "globe"),
 			new link("Github", "https://github.com/dries007", "github"),
 			new link("Bitbucket", "https://bitbucket.com/dries007", "bitbucket"),
 			new link("Youtube", "https://www.youtube.com/user/driesk007", "youtube-play"),
@@ -30,7 +30,7 @@
 			new link("Email", "#contactModal", "envelope", "data-toggle=\"modal\"")
 		),
 		"Links" => array(
-			new link("dtools.net", "https://dtools.net", "wrench"),
+			new link("dtools.net", "http://dtools.net", "wrench"),
 			new link("Downloads", "/downloads", "download-alt", ""),
             new link("Screenshots", "/screenshots", "screenshot", ""),
             new link("Geogebra", "/geogebra", "superscript", ""),
@@ -42,14 +42,12 @@
 	
 	if (strstr($_SERVER["HTTP_HOST"], "driesgames.game-server.cc"))
 	{
-		$rem = strtotime("August 31, 2013 00:00") - time();
-		$days = floor($rem / 86400);
 		$msg =
 		"<div class=\"alert alert-block\">
 			<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
 			<h4>Warning!</h4>
 				You are using my old domain.<br>
-				This domain will expire in ~$days days.
+				This domain will expire!
 		</div>";
 	}
 ?>
@@ -189,7 +187,7 @@
 		<div id="footer">
 			<div class="container">
 				<p class="muted credit">
-					<a href="https://dries007.net">&copy; Dries007</a> <? echo date("Y")?>. Website source available <a href="https://github.com/dries007/Dries007.net">here.</a><br>
+					<a href="http://dries007.net">&copy; Dries007</a> <? echo date("Y")?>. Website source available <a href="https://github.com/dries007/Dries007.net">here.</a><br>
 					Build with <a href="https://twitter.github.io/bootstrap/"><i class="icon-github"></i> Bootstrap</a> & <a href="https://fortawesome.github.io/Font-Awesome/"><i class="icon-flag"></i> Font Awesome</a> in <? $end = microtime(true); echo round(($end - $start), 4);?> sec.
 				</p>
 			  </div>
