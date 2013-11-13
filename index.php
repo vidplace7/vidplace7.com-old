@@ -27,7 +27,7 @@
 			new link("Email", "#contactModal", "envelope", "data-toggle=\"modal\"")
 		),
 		"Links" => array(
-			new link("Aegis Gaming", "http://dtools.net", "gamepad"),
+			new link("Aegis Gaming", "http://aegisgaming.org/", "gamepad"),
 			new link("Not Enough Mods", "http://bot.notenoughmods.com/", "download-alt")
 		)
 	);
