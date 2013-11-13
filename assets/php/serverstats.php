@@ -44,8 +44,8 @@ function getFreeRam()
 
 function getDiskspace($dir)
 {
-	$df = disk_free_space($dir);
-	$dt = disk_total_space($dir);
+	$df = disk_free_space("/");
+	$dt = disk_total_space("/");
 	$du = $dt - $df;
 	return sprintf('%.0f',($du / $dt) * 100);
 }

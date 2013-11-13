@@ -4,58 +4,39 @@
 	Ini_Set( 'display_errors', true );
 	$start = microtime(true);
 	
-	date_default_timezone_set("Europe/Brussels");
+	date_default_timezone_set("America/New_York");
 	
 	include("assets/php/service.class.php");
 	include("assets/php/link.class.php");
 	include("assets/php/serverstats.php");
 	
 	$services = array(
-		new service("Website Http", 80, "http://dries007.net", "dries007.net"),
-		new service("Website Https", 443, "https://dries007.net", "dries007.net"),
+		new service("Website Http", 80, "http://vidplace7.com", "vidplace7.com"),
 		new service("MySQL", 3306),
 		new service("SSH", 22),
-		new service("Webmin", 81, "http://webmin.dries007.net"),
-		new service("Jenkins", 8080, "http://jenkins.dries007.net"),
-		new service("Transmission", 9091, "http://transmission.dries007.net")
+		new service("Deluge", 8112, "http://t.vidplace7.com/deluge", "t.vidplace7.com")
 	);
 	
 	$links = array(
 		"Online profiles" => array(
-			new link("Home", "http://dries007.net", "globe"),
-			new link("Github", "https://github.com/dries007", "github"),
-			new link("Bitbucket", "https://bitbucket.com/dries007", "bitbucket"),
-			new link("Youtube", "https://www.youtube.com/user/driesk007", "youtube-play"),
-			new link("Twitter", "https://twitter.com/driesk007", "twitter"),
+			new link("Home", "http://vidplace7.com", "globe"),
+			new link("Github", "https://github.com/vidplace7", "github"),
+			new link("Bitbucket", "https://bitbucket.com/vidplace7", "bitbucket"),
+			new link("Youtube", "https://www.youtube.com/user/vidplace7", "youtube-play"),
+			new link("Twitter", "https://twitter.com/austlane", "twitter"),
 			new link("Email", "#contactModal", "envelope", "data-toggle=\"modal\"")
 		),
 		"Links" => array(
-			new link("dtools.net", "http://dtools.net", "wrench"),
-			new link("Downloads", "/downloads", "download-alt", ""),
-            new link("Screenshots", "/screenshots", "screenshot", ""),
-            new link("Geogebra", "/geogebra", "superscript", ""),
-			new link("Minecraft Capes", "/capes", "bookmark", ""),
-			new link("The Hacker Manifesto", "/manifesto", "quote-left", ""),
-			new link("Graph", "/graph", "pencil", "")
+			new link("Aegis Gaming", "http://dtools.net", "gamepad"),
+			new link("Not Enough Mods", "http://bot.notenoughmods.com/", "download-alt")
 		)
 	);
-	
-	if (strstr($_SERVER["HTTP_HOST"], "driesgames.game-server.cc"))
-	{
-		$msg =
-		"<div class=\"alert alert-block\">
-			<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-			<h4>Warning!</h4>
-				You are using my old domain.<br>
-				This domain will expire!
-		</div>";
-	}
 ?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Dries007.net</title>
-		<meta name="author" content="Dries007">
+		<title>vidplace7.com</title>
+		<meta name="author" content="vidplace7">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Le styles -->
 		<link href="assets/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -124,7 +105,7 @@
 			<div class="row-fluid" style="padding-top: 30px;">
 				<!-- Nav sidebar -->
 				<div class="span3 offset1 well sidebar-nav">
-					<img src="https://secure.gravatar.com/avatar/0777ff2884805dd73363621faf56d1b9" class="img-rounded" />
+					<img src="https://secure.gravatar.com/avatar/8b54f71c3fe02069e1ddecb61084e7f6" class="img-rounded" />
 					<hr>
 					<ul class="nav nav-list">
 					  <? foreach ($links as $catName => $cat)
@@ -187,7 +168,7 @@
 		<div id="footer">
 			<div class="container">
 				<p class="muted credit">
-					<a href="http://dries007.net">&copy; Dries007</a> <? echo date("Y")?>. Website source available <a href="https://github.com/dries007/Dries007.net">here.</a><br>
+					<a href="http://vidplace7.com">&copy; vidplace7</a> <? echo date("Y")?>. Website source available <a href="https://github.com/vidplace7/vidplace7.com">here.</a><br>
 					Build with <a href="https://twitter.github.io/bootstrap/"><i class="icon-github"></i> Bootstrap</a> & <a href="https://fortawesome.github.io/Font-Awesome/"><i class="icon-flag"></i> Font Awesome</a> in <? $end = microtime(true); echo round(($end - $start), 4);?> sec.
 				</p>
 			  </div>

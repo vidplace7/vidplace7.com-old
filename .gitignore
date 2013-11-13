@@ -1,18 +1,6 @@
 # If you want source files from folders on this list, make an issue.
 # Folders
-ForgeEssentials/
-veerle-v/
-snooper/
-downloads/
-modjam/
-graph/
-phpmyadmin/
 phpsysinfo/
-capes/
-unite/
-screenshots/
-geogebra/
-school/
 
 # Files
 *.zip

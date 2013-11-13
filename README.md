@@ -1,6 +1,5 @@
-Dries007.net
+vidplace7.com
 ============
+Based upon [Dries007's Website](https://github.com/dries007/Dries007.net)
 
-Source code for http://www.dries007.net
-
-If you want the source of folders on the .gitignore list, make an issue.
+Source code for http://vidplace7.com/
